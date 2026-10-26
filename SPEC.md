@@ -6,10 +6,12 @@ This is the durable agreement between the learner and agent. Keep it concise and
 
 ## Current stage
 
-- Stage: Baseline ready to try; brand decisions pending.
+- Stage: Branded implementation, simulated browser review and record accuracy review complete.
 - Current feature: `BRAND-001` — first branded storefront and live style guide.
-- Status: Pending learner scope agreement.
-- Next small decision: Confirm the first slice after trying the neutral storefront.
+- Status: Checked implementation; actual keep/merge/publication evidence is recorded in issue #1. Learner replies are role-play.
+- Next small decision: No follow-up feature selected; see issue #1 for actual delivery.
+- Issue: https://github.com/kaw393939/is117-brand-studio-trial-learning/issues/1
+- Branch: feat/1-brand-studio, created before decisions/previews.
 
 ## Product boundary
 
@@ -19,24 +21,24 @@ The product is the same white T-shirt throughout the comparison. The baseline of
 
 The primary need guides the page. Give the secondary card one contrasting need to check that same page; keep both cards brief.
 
-| Tiny card                             | Primary audience          | Secondary audience        |
-| ------------------------------------- | ------------------------- | ------------------------- |
-| Person in a concrete situation        | Not chosen yet            | Not chosen yet            |
-| Goal or meaning they seek             | Not chosen yet            | Not chosen yet            |
-| Concern before choosing               | Not chosen yet            | Not chosen yet            |
-| What the page should help them decide | Not chosen yet            | Not chosen yet            |
-| Evidence or assumption                | Assumption; not validated | Assumption; not validated |
+| Tiny card                             | Primary audience                                       | Secondary audience                                |
+| ------------------------------------- | ------------------------------------------------------ | ------------------------------------------------- |
+| Person in a concrete situation        | Afternoon study session to casual meet-up with friends | Quiet-day wearer                                  |
+| Goal or meaning they seek             | Easy everyday identity with some personality           | Personality without a loud page                   |
+| Concern before choosing               | Generic/forgettable identity                           | Brand feels too loud                              |
+| What the page should help them decide | Whether the identity fits their after-study plans      | Whether the small accent still feels easy to wear |
+| Evidence or assumption                | Assumption; not validated                              | Assumption; not validated                         |
 
 ## Early brand brief
 
-| Decision                                 | Agreement      |
-| ---------------------------------------- | -------------- |
-| Brand name                               | Not chosen yet |
-| One-sentence promise                     | Not chosen yet |
-| Primary archetype: the brand's character | Not chosen yet |
-| Three voice traits                       | Not chosen yet |
-| One example line in this voice           | Not chosen yet |
-| Learner's predicted audience effect      | Not chosen yet |
+| Decision                                 | Agreement                                                                                                                                                  |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Brand name                               | Off Hours, fictional classroom brand; no trademark clearance claimed                                                                                       |
+| One-sentence promise                     | An easy everyday identity for time after studying                                                                                                          |
+| Primary archetype: the brand's character | Everyperson — proposed welcoming, nonexclusive character                                                                                                   |
+| Three voice traits                       | Warm, plainspoken, lightly playful                                                                                                                         |
+| One example line in this voice           | Out of study mode. / A white tee for casual plans and quiet days.                                                                                          |
+| Learner's predicted audience effect      | B curves/italic type feel relaxed for leaving study mode; small blue/yellow accents add personality. Role-play preference, not measured audience response. |
 
 ## Visual decision
 
@@ -44,25 +46,25 @@ Compare two small hero previews before building the whole page. Hold the product
 
 A simple original SVG wordmark is enough. Show small-size and one-color presentations; they may use the same asset when it works.
 
-| Item                                              | Agreement or evidence |
-| ------------------------------------------------- | --------------------- |
-| Shared headline / support / action                | Not chosen yet        |
-| Modernist preview, reference, and annotations     | Not chosen yet        |
-| Postmodernist preview, reference, and annotations | Not chosen yet        |
-| Chosen direction and reason                       | Not chosen yet        |
-| Original SVG logo                                 | Not chosen yet        |
-| Monochrome and small-size variants                | Not chosen yet        |
-| Logo review at actual use size                    | Not checked yet       |
-| Shared palette, typography, spacing, and assets   | Not chosen yet        |
+| Item                                              | Agreement or evidence                                                                                                                                                                                                                                                                                        |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Shared headline / support / action                | Out of study mode. / A white tee for casual plans and quiet days. / Add to demo bag                                                                                                                                                                                                                          |
+| Modernist preview, reference, and annotations     | public/explorations/modernist.html; Edward McKnight Kauffer drawing, 1934, V&A E.3770-2004. Actual linked image inspected in Computer Use: segmented figure, bars/circular joints, spiral, diagonal plane; translated modular grouping. https://www.vam.ac.uk/articles/what-was-modernism                    |
+| Postmodernist preview, reference, and annotations | public/explorations/postmodernist.html; Martine Bedin, Super lamp prototype, 1981, V&A M.1-2011. Actual image inspected: blue semicircle, black wheels, radial bulbs/colored holders, lamp/toy relationship; translated restrained arch and mixed type. https://www.vam.ac.uk/articles/what-is-postmodernism |
+| Chosen direction and reason                       | B, relaxed curve/type with small accents. Learner requested smaller phone image to reach controls sooner.                                                                                                                                                                                                    |
+| Original SVG logo                                 | public/assets/wordmark.svg, original italic wordmark/curved underline; no trademark clearance claimed.                                                                                                                                                                                                       |
+| Monochrome and small-size variants                | Same flat navy SVG at 156px desktop/130px phone. Rejected 110px stress sample; minimum 130 enforced. public/logo-study.html                                                                                                                                                                                  |
+| Logo review at actual use size                    | Actual rendered sizes inspected and kept in coaching simulation at 130px minimum.                                                                                                                                                                                                                            |
+| Shared palette, typography, spacing, and assets   | Shared styles.css: off-white/navy/cobalt/small yellow; real brand-headline, brand-support, add-button classes and SVG shared by shop/guide/studio.                                                                                                                                                           |
 
 ## Ethical persuasion
 
 Choose two applications that help the visitor make a voluntary, informed decision. Record their real implementation and mechanism rather than a principle name alone. Required size selection or validation alone does not establish consistency. Do not invent social proof, scarcity, authority, or product facts.
 
-| Principle      | Actual copy or interaction | Visitor benefit / factual support |
-| -------------- | -------------------------- | --------------------------------- |
-| Not chosen yet | Not chosen yet             | Not chosen yet                    |
-| Not chosen yet | Not chosen yet             | Not chosen yet                    |
+| Principle   | Actual copy or interaction                                       | Visitor benefit / factual support                                                                                       |
+| ----------- | ---------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Reciprocity | Two free outfit ideas: jeans and light overshirt, below purchase | Helps picture study-to-friends use without burying controls. No signup, payment condition or measured conversion claim. |
+| Liking      | Study time. Friend time. / Out of study mode.                    | Familiar situation/warm voice; no invented endorsements or guaranteed response.                                         |
 
 ## BRAND-001 — first branded storefront and live style guide
 
@@ -82,9 +84,9 @@ Keep when:
 
 Write a short result and link only evidence that exists. A passing browser check is evidence for its assertions, not customer research or proof of full accessibility.
 
-| Spec ID   | Files           | Issue / PR      | Actual checks and observations            |
-| --------- | --------------- | --------------- | ----------------------------------------- |
-| BRAND-001 | Not changed yet | Not created yet | Not run yet; learner observations pending |
+| Spec ID   | Files                                                                                                                                            | Issue / PR                                | Actual checks and observations                                                                                                                                                                                   |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| BRAND-001 | public/index.html, styles.css, styleguide.html, assets/wordmark.svg, logo-study.html, explorations/, tests/browser/branding.spec.js, LEARNING.md | Issue #1; actual PR/delivery linked there | Final check: format/lint, 7 server + 13 Chromium cases passed. Real CUA desktop/keyboard review and 375px screenshots; role-play interpretation/phone revision/keep reason. No actual student learning evidence. |
 
 ## Later
 

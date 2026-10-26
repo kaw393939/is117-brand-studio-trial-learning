@@ -1,7 +1,8 @@
 import { createServer } from "node:http";
-import { readFile } from "node:fs/promises";
+import { readFile, realpath } from "node:fs/promises";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import path from "node:path";
+import { createDevelopmentReload } from "./dev-reload.mjs";
 
 const publicDirectory = path.resolve(
   fileURLToPath(new URL("./public/", import.meta.url)),
@@ -20,9 +21,13 @@ const types = {
   ".json": "application/json; charset=utf-8",
 };
 
-// Development server only. GitHub Pages serves the same public/ files in production.
-export function createApp() {
-  return createServer(async (request, response) => {
+// Local server only. GitHub Pages serves the unchanged public/ files.
+export function createApp({
+  development = false,
+  publicRoot = publicDirectory,
+} = {}) {
+  const reload = development ? createDevelopmentReload(publicRoot) : undefined;
+  const app = createServer(async (request, response) => {
     if (!["GET", "HEAD"].includes(request.method)) {
       response.writeHead(405, { Allow: "GET, HEAD" });
       response.end("This demo serves files; it does not accept orders.");
@@ -32,6 +37,7 @@ export function createApp() {
       const pathname = decodeURIComponent(
         new URL(request.url, "http://localhost").pathname,
       );
+      if (reload?.handle(pathname, request, response)) return;
       const segments = pathname.split("/");
       if (
         segments.some((segment) => segment.startsWith(".")) ||
@@ -43,22 +49,28 @@ export function createApp() {
         return;
       }
       const filename = path.resolve(
-        publicDirectory,
+        publicRoot,
         `.${pathname.endsWith("/") ? `${pathname}index.html` : pathname}`,
       );
-      if (!filename.startsWith(`${publicDirectory}${path.sep}`)) {
+      const resolvedRoot = await realpath(publicRoot);
+      const resolvedFile = await realpath(filename);
+      if (!resolvedFile.startsWith(`${resolvedRoot}${path.sep}`)) {
         response.writeHead(404);
         response.end("File not found");
         return;
       }
-      const content = await readFile(filename);
+      const content = await readFile(resolvedFile);
+      const servedContent =
+        reload && path.extname(filename) === ".html"
+          ? reload.inject(content)
+          : content;
       response.writeHead(200, {
         "Content-Type":
           types[path.extname(filename)] ?? "application/octet-stream",
         "Cache-Control": "no-store",
         "X-Content-Type-Options": "nosniff",
       });
-      response.end(request.method === "HEAD" ? undefined : content);
+      response.end(request.method === "HEAD" ? undefined : servedContent);
     } catch (error) {
       response.writeHead(error instanceof URIError ? 400 : 404);
       response.end(
@@ -66,6 +78,8 @@ export function createApp() {
       );
     }
   });
+  app.on("close", () => reload?.close());
+  return app;
 }
 
 if (
@@ -74,7 +88,8 @@ if (
 ) {
   const port = Number(process.env.PORT ?? 5173);
   const host = process.env.HOST ?? "127.0.0.1";
-  const app = createApp();
+  const development = process.argv.includes("--dev");
+  const app = createApp({ development });
   app.on("error", (error) => {
     if (error.code === "EADDRINUSE") {
       console.error(
@@ -85,7 +100,15 @@ if (
     }
     process.exitCode = 1;
   });
-  app.listen(port, host, () =>
-    console.log(`Brand studio: http://${host}:${port}`),
-  );
+  app.listen(port, host, () => {
+    console.log(`Brand studio: http://${host}:${port}`);
+    console.log(
+      development
+        ? "Development mode: save public/ files to refresh the browser automatically."
+        : "Plain preview mode: refresh the browser yourself after saving files.",
+    );
+    console.log(
+      "Press Ctrl+C to stop. Local changes do not publish to GitHub Pages.",
+    );
+  });
 }

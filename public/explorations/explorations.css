@@ -1,0 +1,522 @@
+/* Comparison-only styles. The neutral storefront does not load this file. */
+.study-page,
+.comparison-page {
+  --study-paper: #f8f6f0;
+  --study-ink: #15254b;
+  --study-blue: #224ec5;
+  --study-accent: #e9bf67;
+  --study-soft: #e9edf7;
+  --study-muted: #58627a;
+  --study-line: #c6cbd7;
+
+  margin: 0;
+  background: var(--study-paper);
+  color: var(--study-ink);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+.study-page *,
+.comparison-page * {
+  box-sizing: border-box;
+}
+
+.study-page a,
+.comparison-page a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+}
+
+.study-page :focus-visible,
+.comparison-page :focus-visible {
+  outline: 3px solid var(--study-blue);
+  outline-offset: 4px;
+}
+
+.study-page [hidden] {
+  display: none !important;
+}
+
+.study-page h1,
+.study-page h2,
+.study-page p,
+.comparison-page h1,
+.comparison-page h2,
+.comparison-page p {
+  margin: 0;
+}
+
+.study-page img {
+  display: block;
+  max-width: 100%;
+}
+
+.study-wrap {
+  width: min(calc(100% - 3rem), 1200px);
+  margin-inline: auto;
+}
+
+.study-skip {
+  position: absolute;
+  z-index: 5;
+  top: 0.5rem;
+  left: 0.5rem;
+  transform: translateY(-180%);
+  padding: 0.6rem 1rem;
+  background: var(--study-ink);
+  color: var(--study-paper) !important;
+}
+
+.study-skip:focus {
+  transform: translateY(0);
+}
+
+.study-header {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid var(--study-ink);
+}
+
+.study-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+
+.study-header a {
+  font-size: 0.72rem;
+}
+
+.study-label,
+.study-eyebrow,
+.study-price-note,
+.study-facts,
+.study-visual-label {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.65rem;
+  line-height: 1.5;
+}
+
+.study-label {
+  padding-block: 1rem 0;
+  color: var(--study-muted);
+}
+
+.study-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.5rem, 5vw, 5rem);
+  align-items: center;
+  padding-block: 1.5rem 2.5rem;
+}
+
+.study-product-visual {
+  position: relative;
+  min-width: 0;
+  padding: 1.3rem;
+  background: var(--study-soft);
+}
+
+.study-visual-label {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem !important;
+}
+
+.study-shirt {
+  width: 100%;
+  max-height: 430px;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(1);
+}
+
+.study-image-caption {
+  padding-top: 1rem;
+  font-size: 0.7rem;
+}
+
+.study-eyebrow {
+  color: var(--study-blue);
+  margin-bottom: 1rem !important;
+}
+
+.study-information h1 {
+  max-width: 9ch;
+  font-size: clamp(2.8rem, 5.7vw, 5.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.065em;
+}
+
+.study-support {
+  max-width: 28ch;
+  margin-top: 1.2rem !important;
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  line-height: 1.45;
+}
+
+.study-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-block: 1.3rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--study-line);
+}
+
+.study-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.study-price span {
+  font-size: 0.65rem;
+  font-weight: 400;
+}
+
+.study-price-note {
+  color: var(--study-muted);
+  text-align: right;
+}
+
+.study-form fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.study-form legend {
+  padding: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.study-field-help,
+.study-disclaimer {
+  color: var(--study-muted);
+  font-size: 0.7rem;
+}
+
+.study-field-help {
+  margin-top: 0.3rem !important;
+}
+
+.study-sizes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  margin-block: 0.75rem 1rem;
+}
+
+.study-size {
+  position: relative;
+  cursor: pointer;
+}
+
+.study-size input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.study-size span {
+  display: grid;
+  place-items: center;
+  min-height: 2.6rem;
+  border: 1px solid var(--study-line);
+  font-size: 0.8rem;
+}
+
+.study-size input:checked + span {
+  background: var(--study-ink);
+  color: var(--study-paper);
+  border-color: var(--study-ink);
+}
+
+.study-size input:focus-visible + span {
+  outline: 3px solid var(--study-blue);
+  outline-offset: 3px;
+}
+
+.study-size input:hover + span {
+  border-color: var(--study-ink);
+}
+
+.study-error {
+  margin-bottom: 1rem !important;
+  color: #932c20;
+  font-size: 0.8rem;
+}
+
+.study-button {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--study-blue);
+  background: var(--study-blue);
+  color: #fff;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.study-button:hover {
+  background: var(--study-ink);
+  border-color: var(--study-ink);
+}
+
+.study-disclaimer {
+  margin-top: 0.8rem !important;
+  max-width: 48ch;
+}
+
+.study-facts {
+  margin-top: 1rem !important;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--study-line);
+}
+
+.study-bag {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding-block: 1.5rem;
+  border-top: 1px solid var(--study-ink);
+  font-size: 0.8rem;
+}
+
+.study-bag h2 {
+  font-size: 1rem;
+}
+
+.study-bag ul {
+  margin: 0.6rem 0;
+  padding-left: 1.2rem;
+}
+
+.study-empty {
+  padding: 0.4rem 0;
+  border: 0;
+  background: transparent;
+  color: var(--study-ink);
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+
+.study-empty:disabled {
+  color: var(--study-muted);
+  cursor: default;
+}
+
+.study-notes {
+  padding-block: 2rem 3rem;
+  border-top: 1px solid var(--study-line);
+  font-size: 0.85rem;
+}
+
+.study-notes h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.study-notes p + p {
+  margin-top: 0.75rem;
+}
+
+.study-notes ul {
+  padding-left: 1.2rem;
+}
+
+.study-notes li + li {
+  margin-top: 0.5rem;
+}
+
+.study-modern .study-product-visual {
+  border-left: 0.7rem solid var(--study-blue);
+}
+
+.study-modern .study-visual-label::after {
+  content: "";
+  width: 2rem;
+  height: 0.55rem;
+  background: var(--study-accent);
+  align-self: center;
+}
+
+.study-modern .study-information {
+  border-top: 0.45rem solid var(--study-ink);
+  padding-top: 1rem;
+}
+
+.study-post .study-name {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 1.5rem;
+}
+
+.study-post .study-product-visual {
+  padding-top: 2rem;
+  border-radius: 48% 48% 0 0;
+  border-top: 1.2rem solid var(--study-blue);
+}
+
+.study-post .study-visual-label {
+  justify-content: center;
+  padding-top: 0.7rem;
+}
+
+.study-post .study-product-visual::after {
+  content: "";
+  position: absolute;
+  right: -0.5rem;
+  bottom: 2rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 0.5rem solid var(--study-paper);
+  border-radius: 50%;
+  background: var(--study-accent);
+}
+
+.study-post .study-information h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.06em;
+}
+
+.study-post .study-eyebrow {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  background: var(--study-accent);
+  color: var(--study-ink);
+}
+
+.comparison-wrap {
+  width: min(calc(100% - 3rem), 1700px);
+  margin-inline: auto;
+}
+
+.comparison-header {
+  padding-block: 2rem 1.5rem;
+}
+
+.comparison-page .comparison-header h1 {
+  margin-top: 0.5rem;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+}
+
+.comparison-header p + p {
+  margin-top: 0.7rem;
+}
+
+.comparison-page .comparison-header > p {
+  font-size: 0.9rem;
+}
+
+.comparison-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  padding-bottom: 2rem;
+}
+
+.comparison-panel {
+  min-width: 0;
+}
+
+.comparison-panel h2 {
+  font-size: 1rem;
+}
+
+.comparison-page .comparison-panel > p {
+  margin-block: 0.4rem 0.9rem;
+  font-size: 0.8rem;
+}
+
+.comparison-panel iframe {
+  display: block;
+  width: 100%;
+  height: 1080px;
+  border: 1px solid var(--study-line);
+  background: var(--study-paper);
+}
+
+.comparison-note {
+  padding-block: 1.5rem 2rem;
+  border-top: 1px solid var(--study-line);
+  font-size: 0.8rem;
+}
+
+@media (width <= 760px) {
+  .comparison-pair {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (width <= 560px) {
+  .study-wrap,
+  .comparison-wrap {
+    width: calc(100% - 2rem);
+  }
+
+  .study-header {
+    min-height: 68px;
+  }
+
+  .study-hero {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding-top: 1rem;
+  }
+
+  .study-product-visual {
+    width: 100%;
+    max-width: 400px;
+    margin-inline: auto;
+    padding: 1rem;
+  }
+
+  .study-shirt {
+    max-height: 330px;
+  }
+
+  .study-information h1 {
+    max-width: 10ch;
+    font-size: clamp(3rem, 14vw, 4.5rem);
+  }
+
+  .study-support {
+    max-width: 30ch;
+  }
+
+  .study-bag {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .study-post .study-product-visual {
+    padding-top: 1rem;
+  }
+
+  .comparison-panel iframe {
+    height: 1250px;
+  }
+}
