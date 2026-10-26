@@ -12,6 +12,6 @@ Substantial AI design, code, suggestions, and explanations are disclosed in [LEA
 
 A teacher opens the project and guide, reads SPEC and the actual issue/PR, then compares the short record with disclosed help. If uncertain, use one relevant follow-up above and accept an explanation or demonstration. Label a later explanation as later; a missing recorded statement is not proof of inability.
 
-At this review, record accuracy approval and the final PR keep/merge decision remain pending. Keeping a corrected browser view does not verify a merge. Consult [SPEC](../SPEC.md) and [issue #1](https://github.com/kaw393939/is117-brand-studio-trial-learning/issues/1) for subsequent delivery evidence. Passing checks do not establish audience demand, persuasion effectiveness, or complete accessibility.
+The simulated learner reviewed the summary for accuracy/removals before any commit or push; that approval confirms accuracy, not learning. Consult [SPEC](../SPEC.md) and [issue #1](https://github.com/kaw393939/is117-brand-studio-trial-learning/issues/1) for actual PR, merge, and publication evidence. Passing checks do not establish audience demand, persuasion effectiveness, or complete accessibility.
 
 **Counterexample:** a polished site with passing checks and only “yes” replies may support the artifact criterion, while **Make and explain decisions remains Not yet evidenced**. Ask about one actual visible choice instead of inferring a reason from the finished design.
