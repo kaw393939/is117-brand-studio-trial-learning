@@ -8,8 +8,9 @@
     "node": "^22.16.0 || >=24.0.0"
   },
   "scripts": {
-    "start": "node server.mjs",
-    "dev": "node --watch server.mjs",
+    "start": "node server.mjs --dev",
+    "dev": "node server.mjs --dev",
+    "preview": "node server.mjs",
     "setup:browser": "playwright install chromium",
     "format": "prettier --write .",
     "format:check": "prettier --check .",

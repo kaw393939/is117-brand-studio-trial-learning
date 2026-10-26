@@ -40,7 +40,9 @@ The student should already have made their own GitHub template copy and cloned i
 
 If their remote is still `kaw393939/is117-brand-studio`, help them create their own template copy and SSH-clone that before saving student changes. Do not push their solution to the instructor's template.
 
-Check `node --version` and `npm --version`; use Node 22.16+ on the 22 LTS line (recommended), or 24+. `.nvmrc` records 22. Help with errors in the same chat. Run `npm ci`, then `npm start` and confirm the actual address. Do not require VS Code, an IDE extension, an agent CLI, Git GUI, Codespaces, or app-to-app handoffs.
+Before `npm ci`, confirm the clone has `README.md`, `package.json`, and `package-lock.json` from the student's remote. An empty clone may mean GitHub is still generating the template: wait until its README appears on GitHub, confirm the remote's default branch, then pull that branch into the untouched clone (for `main`, `git pull --ff-only origin main`). Do not invent replacement npm files.
+
+Check `node --version` and `npm --version`; use Node 22.16+ on the 22 LTS line (recommended), or 24+. `.nvmrc` records 22. Help with errors in the same chat. Run `npm ci`, then `npm run dev` and confirm the actual address. Explain that saved changes under `public/` refresh the local browser automatically, unsaved edits do not appear, and a refresh resets the temporary demo bag. Keep the server running while working; **Ctrl+C** stops it. `npm run preview` is an optional plain mode that needs manual browser refresh. Local development does not publish to GitHub Pages. Do not require VS Code, an IDE extension, an agent CLI, Git GUI, Codespaces, or app-to-app handoffs.
 
 Have the learner open `http://localhost:5173`, try the size selector and demo bag, then ask one short question about what they actually see. If you can operate a browser, your observation supplements theirs; it does not replace this pause. Keep the baseline available while decisions develop.
 

@@ -1,18 +1,16 @@
-/* Shared brand tokens. Change these after you agree on your brand direction.
-   Both the storefront and the live style guide use this file. */
+/* Off Hours shared identity. Storefront, live guide, and studio load this file. */
 :root {
-  --color-paper: #f6f5f0;
-  --color-ink: #171a18;
-  --color-muted: #5a615b;
-  --color-line: #d1d5cc;
-  --color-accent: #e3ef56;
-  --color-soft: #e8eae1;
+  --color-paper: #f8f6f0;
+  --color-ink: #15254b;
+  --color-muted: #58627a;
+  --color-line: #c6cbd7;
+  --color-blue: #224ec5;
+  --color-accent: #e9bf67;
+  --color-soft: #e9edf7;
   --color-white: #fff;
   --color-danger: #992e28;
-  --font-body:
-    system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", sans-serif;
-  --font-display:
-    system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", sans-serif;
+  --font-body: arial, helvetica, sans-serif;
+  --font-display: georgia, "Times New Roman", serif;
   --font-mono: ui-monospace, sfmono-regular, consolas, monospace;
   --space-1: 0.5rem;
   --space-2: 1rem;
@@ -20,7 +18,7 @@
   --space-4: 2rem;
   --space-5: 3rem;
   --space-6: 4rem;
-  --page-width: 1440px;
+  --page-width: 1280px;
 }
 
 * {
@@ -98,10 +96,10 @@ p {
 }
 
 h1,
-h2,
-h3 {
+h2 {
   font-family: var(--font-display);
-  font-weight: 550;
+  font-weight: 400;
+  font-style: italic;
 }
 
 h1 {
@@ -117,6 +115,8 @@ h2 {
 }
 
 h3 {
+  font-family: var(--font-body);
+  font-weight: 600;
   font-size: 1.3rem;
   line-height: 1.3;
   letter-spacing: -0.03em;
@@ -196,7 +196,7 @@ p + p {
 }
 
 .site-header {
-  min-height: 106px;
+  min-height: 84px;
   display: flex;
   align-items: center;
   gap: 3rem;
@@ -209,7 +209,8 @@ p + p {
 }
 
 .wordmark {
-  width: 150px;
+  width: 156px;
+  min-width: 130px;
   height: auto;
 }
 
@@ -256,32 +257,45 @@ p + p {
 
 .product-section {
   display: grid;
-  grid-template-columns: 1.13fr 1fr;
-  gap: clamp(3rem, 7vw, 8rem);
-  padding-block: var(--space-5) 5rem;
-  align-items: start;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  padding-block: 2rem 3rem;
+  align-items: center;
 }
 
 .product-visual {
   position: relative;
+  padding: 1.5rem 1.2rem 0.9rem;
+  border-top: 1rem solid var(--color-blue);
+  border-radius: 48% 48% 0 0;
   background: var(--color-soft);
 }
 
-.visual-label {
+.product-visual::after {
+  content: "";
   position: absolute;
-  z-index: 1;
-  inset: 1.3rem 1.4rem auto;
+  right: -0.35rem;
+  bottom: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0.45rem solid var(--color-paper);
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.visual-label {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 1rem;
+  margin-bottom: 0.75rem;
   font-size: 0.6rem;
 }
 
 .shirt-image {
   width: 100%;
-  height: auto;
-  aspect-ratio: 800 / 880;
+  height: 360px;
   object-fit: contain;
+  filter: grayscale(1);
 }
 
 .image-caption {
@@ -289,8 +303,7 @@ p + p {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1.2rem 1.4rem;
-  border-top: 1px solid var(--color-line);
+  padding: 0.75rem 0 0;
   font-size: 0.59rem;
 }
 
@@ -302,11 +315,39 @@ p + p {
 
 .product-information {
   max-width: 530px;
-  padding-block: 1rem;
+  padding-block: 0.25rem;
 }
 
-.product-information h1 {
-  margin-top: 1.6rem;
+.brand-eyebrow {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  background: var(--color-accent);
+}
+
+.brand-headline {
+  max-width: 9ch;
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 5.7vw, 5.4rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+}
+
+.product-information .brand-headline {
+  margin-top: 0.9rem;
+}
+
+.brand-support {
+  max-width: 29ch;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.45;
+  letter-spacing: 0;
+}
+
+.product-information .brand-support {
+  margin-top: 1rem;
 }
 
 .product-intro {
@@ -327,8 +368,8 @@ p + p {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  margin-block: 2rem 1.5rem;
-  padding-bottom: 1.2rem;
+  margin-block: 1.2rem 1rem;
+  padding-bottom: 0.9rem;
   border-bottom: 1px solid var(--color-line);
 }
 
@@ -394,7 +435,7 @@ legend {
 .size-option span {
   display: grid;
   place-items: center;
-  min-height: 3.2rem;
+  min-height: 2.8rem;
   border: 1px solid var(--color-line);
   background: var(--color-paper);
   font-size: 0.83rem;
@@ -452,13 +493,15 @@ legend {
 }
 
 .button-primary {
-  background: var(--color-ink);
-  color: var(--color-paper);
+  border-color: var(--color-blue);
+  background: var(--color-blue);
+  color: var(--color-white);
 }
 
 .button-primary:hover {
-  background: var(--color-accent);
-  color: var(--color-ink);
+  border-color: var(--color-ink);
+  background: var(--color-ink);
+  color: var(--color-white);
 }
 
 .button-secondary {
@@ -472,7 +515,8 @@ legend {
 
 .add-button {
   width: 100%;
-  margin-top: 1.4rem;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
 .demo-disclaimer {
@@ -481,6 +525,31 @@ legend {
   color: var(--color-muted);
   margin-top: 0.9rem;
   max-width: 420px;
+}
+
+.product-note {
+  margin-top: 0.8rem;
+  color: var(--color-muted);
+}
+
+.styling-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding-block: 2rem;
+  border-top: 1px solid var(--color-line);
+}
+
+.styling-section h2 {
+  max-width: 12ch;
+  margin-top: 0.6rem;
+  font-size: clamp(2rem, 3vw, 3rem);
+}
+
+.styling-tips {
+  align-self: center;
+  max-width: 440px;
+  font-size: 0.88rem;
 }
 
 .product-facts {
@@ -722,7 +791,7 @@ legend {
   margin-top: 0.5rem;
 }
 
-.decision-grid .undecided {
+.decision-grid .decision-value {
   font-size: 1.5rem;
   font-weight: 450;
   color: var(--color-ink);
@@ -769,7 +838,36 @@ legend {
 
 .logo-mono {
   width: 190px;
-  filter: brightness(0);
+  height: auto;
+}
+
+.purchase-specimen {
+  max-width: 530px;
+}
+
+.logo-review-grid {
+  padding-bottom: 3rem;
+}
+
+.logo-review-grid h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.logo-use-desktop {
+  width: 156px;
+  height: auto;
+}
+
+.logo-use-phone {
+  width: 130px;
+  height: auto;
+}
+
+.logo-review-status {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
 .logo-variant p,
@@ -785,7 +883,7 @@ legend {
 
 .palette-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 0.65rem;
 }
 
@@ -967,10 +1065,6 @@ legend {
     align-items: start;
   }
 
-  .product-information h1 {
-    font-size: clamp(3.4rem, 7vw, 5rem);
-  }
-
   .product-information {
     padding-top: 0.5rem;
   }
@@ -1018,11 +1112,11 @@ legend {
   }
 
   .site-header {
-    min-height: 108px;
+    min-height: 98px;
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 0.5rem 1rem;
-    padding-block: 1.2rem 1rem;
+    padding-block: 0.7rem 0.6rem;
   }
 
   .wordmark {
@@ -1054,18 +1148,35 @@ legend {
 
   .product-section {
     grid-template-columns: 1fr;
-    gap: 2rem;
-    padding-block: 1.5rem 3rem;
+    gap: 1rem;
+    padding-block: 1rem 2rem;
   }
 
   .product-visual {
-    max-width: 600px;
+    max-width: 450px;
     width: 100%;
     margin-inline: auto;
+    padding: 0.7rem 1rem;
+    border-top-width: 0.7rem;
   }
 
   .shirt-image {
-    max-height: 530px;
+    height: 145px;
+  }
+
+  .visual-label {
+    margin-bottom: 0.35rem;
+  }
+
+  .image-caption {
+    display: none;
+  }
+
+  .product-visual::after {
+    bottom: 0.6rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-width: 0.3rem;
   }
 
   .product-information {
@@ -1073,9 +1184,25 @@ legend {
     padding: 0;
   }
 
-  .product-information h1 {
-    font-size: clamp(4.2rem, 13vw, 7rem);
-    margin-top: 1rem;
+  .brand-headline {
+    max-width: 10ch;
+    font-size: clamp(2.8rem, 13vw, 4.5rem);
+  }
+
+  .product-information .brand-headline {
+    margin-top: 0.7rem;
+  }
+
+  .brand-support {
+    font-size: 1rem;
+  }
+
+  .product-information .brand-support {
+    margin-top: 0.7rem;
+  }
+
+  .product-information .price-row {
+    margin-block: 1rem 0.8rem;
   }
 
   .product-intro {
@@ -1095,6 +1222,12 @@ legend {
     grid-template-columns: 1fr;
     gap: 1.3rem;
     padding-block: 2rem;
+  }
+
+  .styling-section {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding-block: 1.5rem;
   }
 
   .bag-section h2 {
@@ -1119,7 +1252,7 @@ legend {
   }
 
   .footer-tagline {
-    display: none;
+    display: block;
   }
 
   .page-hero {
@@ -1169,7 +1302,7 @@ legend {
     gap: 1rem;
   }
 
-  .decision-grid .undecided {
+  .decision-grid .decision-value {
     font-size: 1.3rem;
   }
 
@@ -1178,7 +1311,7 @@ legend {
   }
 
   .palette-grid {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .color-swatch {
